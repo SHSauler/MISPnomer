@@ -1,5 +1,16 @@
 function save_options() {
     let url = document.getElementById('mispURL').value;
+
+    //remove trailing slash
+    if (/\/$/.test(url)) {
+        url = url.replace(/\/$/,'');
+        document.getElementById('mispURL').value = url;
+    }
+
+    // checking URL
+    let pattern = /^https?:\/\/(www\.)?[-a-zA-Z0-9]{2,256}\.[a-z]{2,6}$/g;
+    let url_testresult = pattern.test(url);
+
     let misp_org = document.getElementById('defaultOrg').value;
         
     let settingsObj = {};
@@ -10,8 +21,17 @@ function save_options() {
 
         // Tell user saving worked
         let status = document.getElementById('status');
-        status.textContent = 'Options saved.';
-        status.style.color = "#007dff";
+
+        if (url_testresult === false){
+            status.textContent = "Please check URL. It looks weird. But I won't stop you.";
+            status.style.color = "#ff9c00";
+        }
+        else{
+
+            status.textContent = 'Options saved.';
+            status.style.color = "#007dff";
+        }
+
         status.style.fontWeight = "900";
 
         let button = document.getElementById('save');
@@ -20,7 +40,7 @@ function save_options() {
         setTimeout(function() {
             status.textContent = '';
             button.style.background = "#ccc"
-        }, 2000);
+        }, 5000);
         });
     }
 
@@ -45,8 +65,7 @@ function restore_options() {
         
     chrome.storage.local.get({settingsObj: {'mispUrl': 'https://default.local', 'defaultOrg': '1', 'defaultOrgName': 'Default Org (1)'}}, function(result){
         document.getElementById('mispURL').value = result['settingsObj']['mispUrl'];
-        document.getElementById('defaultOrgDefault').value = result['settingsObj']['defaultOrg'];
-        document.getElementById('defaultOrgDefault').innerHtml = result['settingsObj']['defaultOrgName'];
+        document.getElementById('defaultOrg').value = result['settingsObj']['defaultOrg'];
         });
 }
 
