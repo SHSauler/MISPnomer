@@ -1,0 +1,101 @@
+.header {
+    width: 400px;
+    padding: 15px;
+    overflow: hidden;
+}
+
+.header img {
+    margin-right: 15px;
+    float: left;
+}
+
+label {
+    margin-left: 10px;
+    padding: 5px;
+    font-size: 1.2em;
+    display: inline-block;
+    width: 120px;
+    text-align: left;
+}
+
+.orgDiv {
+    margin-left: 10px;
+    padding: 5px;
+    font-size: 1.2em;
+    display: inline-block;
+    text-align: left;
+}
+
+
+button.round {
+    padding:10px 15px; 
+    background:#ccc; 
+    border:0 none;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    cursor:pointer;
+    float: left;
+}
+
+div#license {
+    width: 500px;
+    margin-top: 30px;
+    padding: 5px;
+    font-size: 0.9em;
+    background:#ccc;
+    border: 1px solid #888;
+}
+
+div#note {
+    margin-left: 5px;
+    padding: 5px;
+    font-size: 1.2em;
+    font-weight: 900;
+}
+
+div#savearea {
+    padding: 5px;
+    vertical-align: middle;
+}
+
+div#status{
+    height: 15px;
+    padding:10px 15px;
+    border-left: 10px;
+}
+
+div.iocarea{
+    width: 540px;
+    height: 300px;
+    border-style: solid;
+    border-width: 1px;
+    overflow-y: scroll;
+    overflow-x:hidden;
+}
+
+table.ioctable{
+    border-collapse: collapse;
+    //border: 1px solid black;
+    vertical-align: top;
+    text-align: left;
+}
+
+tr.ioctable{
+    border-bottom: 1px solid #ddd;
+}
+
+tr.ioctableheader{
+    border-bottom: 1px solid black;
+}
+
+.eventinfo{
+    width: 350px;
+}
+
+.xbutton {
+    background:#ccc; 
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    vertical-align: middle;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head><title>MISPnomer settings</title>
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+
+  <div class="header">
+    <img src = "logos/icon64.png" alt = "MISPnomer Logo" />
+    <h2>MISPifier</h2>
+  </div>
+
+  <p>
+    <label>MISP URL
+      <input type="text" id="mispURL" size="50">
+    </label>
+  </p>
+
+  <div class="orgDiv">
+    Choose the default org that your new events should be added to.<br>
+    <input id="defaultOrg" type="number" value="1" min="1" max="100">
+  </div>
+
+  <!--
+  <p>Options:<br>
+    <input type="checkbox" name="opt[]" value="ids_flag">Toggle ids_flag on all attributes<br>
+    <input type="checkbox" name="opt[]" value="url_comment">Add tab URL as comment of attribute<br>
+  </p>
+  -->
+
+  <div id="savearea">
+    <button class="round" id="save">Save</button>
+    <div id="status"></div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

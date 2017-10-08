@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>MISP Event Creation Page</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+      <!--
+      body{
+        height: 400px;
+        width: 550px;
+      }
+      -->
+    </style>
+    
+  </head>
+  <body>
+    <p>Collect IoCs by selecting text, right clicking and adding the right indicator type. Once you are finished, come here to create the event.</p>
+    
+    <div id="iocarea" class="iocarea"></div>
+
+
+    <!--'options' => array('0' => 'Your organisation only', '1' => 'This community only', '2' => 'Connected communities', '3' => 'All communities')-->
+    <label>Distribution
+    <select name="distribution" id="distribution">
+      <option value="0">Your org only</option>
+      <option value="1">This community</option>
+      <option value="3">Connected comm</option>
+      <option value="4">All comms</option>
+    </select>
+    </label>
+
+    <!--'options' => array('0' => 'Initial', '1' => 'Ongoing', '2' => 'Completed')-->
+    <label>Analysis
+    <select name="analysis" id="analysis">
+      <option value="0">Initial</option>
+      <option value="1">Ongoing</option>
+      <option value="2">Completed</option>
+    </select>
+    </label>
+    
+    <!--options' => array('1' => 'High', '2' => 'Medium', '3' => 'Low', '4' => 'Undefined')-->
+    <label>Threat Level
+    <select name="threatlevel" id="threatlevel">
+      <option value="2">Medium</option>
+      <option value="1">High</option>
+      <option value="3">Low</option>
+      <option value="4">Undefined</option>
+    </select>
+    </label>
+
+    <br>
+    <label class="eventinfo">Event Info
+    <input type="text" name="eventinfo" class="eventinfo" />
+    </label>
+    
+    <label>Date
+    <input type="date" id="datefield" />
+    </label>
+
+  <div id="savearea">
+    <button class="round" id="submitEvent">Submit event</button>
+    <button class="round" id="clearAttributes">Clear attributes</button>
+    <div id="status"></div>
+  </div>
+  <script src="popup.js"></script>
+  </body>
+</html>

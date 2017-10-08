@@ -1,0 +1,26 @@
+{
+  "name": "MISPnomer",
+  "description": "Chrome extension for MISP IoC ingestion",
+  "version": "0.1",
+  "icons": { "16": "logos/icon16.png",
+             "48": "logos/icon48.png",
+             "128": "logos/icon128.png" },
+  
+  "browser_action": {
+    "default_icon": {
+       "16": "logos/icon16.png",
+       "48": "logos/icon48.png",
+       "128": "logos/icon128.png"
+    },
+    "default_title": "Adding event",
+    "default_popup": "popup.html"
+  },
+  
+  "options_page": "options.html",
+  "permissions": ["contextMenus", "storage", "tabs", "activeTab", "https://*/"],
+  "background": {
+    "persistent": false,
+    "scripts": ["background.js"]
+  },
+  "manifest_version": 2
+}
